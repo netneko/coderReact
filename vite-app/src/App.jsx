@@ -1,13 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import NavBar from './components/NavBar/Navbar.jsx';
+import './NavBar.css'
+import NavBar from './components/NavBar/NavBar';
 
-function App() 
-{
-  return
-  (
+function App() {
+  return(
     <div className='App'>
       <NavBar />
     </div>
