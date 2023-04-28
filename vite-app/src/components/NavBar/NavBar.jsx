@@ -1,14 +1,29 @@
-import './NavBar.css';
+import './NavBar.css'
 
-export default function NavBar()
+const NavBar=()=>
 {
-    return <nav>
-        <ul>
-            <li><a href="">Homepage</a></li>
-            <li><a href="">Otra cosa</a></li>
-        </ul>
+    return
+    (
+        <nav>
+            <h3>Ecommerce</h3>
+            <button>Rascadores</button>
+            <button>Camitas</button>
+            <button>Jueguetes</button>
         </nav>
+    )
 }
 
+export default NavBar;
 
-//</nav></nav>hacer lo mismo con cart widget 
+/*export default function NavBar()
+{
+    return 
+    
+        <nav>
+            <h3>Ecommerce</h3>
+            <button>Rascadores</button>
+            <button>Camitas</button>
+            <button>Jueguetes</button>
+        </nav>
+    
+}*/
