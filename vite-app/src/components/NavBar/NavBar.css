@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 4rem;
+}
+
+.nav-links {
+    gap: 2rem;
+}
+
+.nav-link a {
+    color: #0B4666;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    transition: all .8s;
+}
+
+.nav-link:hover:after {
+    color: #6daadd;
+    width: 100%;
+    background: #6daadd;
+}

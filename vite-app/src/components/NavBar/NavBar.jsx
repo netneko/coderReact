@@ -1,17 +1,19 @@
 import './NavBar.css'
 
-const NavBar=()=>{
-    return(
-        <nav>
-            <h3>Ecommerce</h3> 
-            <div>
-                    <ul>
-                        <li>Rascadores</li>
-                        <li>Camitas</li>
-                        <li>Juguetes</li>
-                    </ul>
+
+const NavBar = () => {
+    return (
+        <nav className="nav">
+            <h3 className="nav-title">Ecommerce</h3>
+            <div className="nav-links">
+                <ul>
+                    <li className="nav-link">Rascadores</li>
+                    <li className="nav-link">Camitas</li>
+                    <li className="nav-link">Juguetes</li>
+                </ul>
             </div>
         </nav>
+
     )
 }
 
