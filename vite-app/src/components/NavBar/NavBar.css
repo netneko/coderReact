@@ -8,11 +8,20 @@
 
 .nav-links {
     gap: 2rem;
+    display: flex;
+}
+
+.nav-link  {
+    color: #0B4666;
     list-style: none;
 }
 
-.nav-link a {
-    color: #0B4666;
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline-start: 0;
+    gap: 2rem;
 }
 
 .nav-link::after {
