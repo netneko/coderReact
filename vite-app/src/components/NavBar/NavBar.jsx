@@ -6,7 +6,7 @@ import React from "react";
 const NavBar = () => {
     return (
         <nav className="nav">
-            <h3 className="nav-title">Ecommerce</h3>
+            <h3 className="nav-title">Neko </h3>
             <div className="nav-links">
                 <ul>
                     <li className="nav-link">Rascadores</li>

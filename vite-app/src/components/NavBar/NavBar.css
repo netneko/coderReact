@@ -2,10 +2,13 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     text-align: center;
     gap: 4rem;
+    background-color: #8fb6d8;
 }
 
+.nav-title
 .nav-links {
     gap: 2rem;
     display: flex;
@@ -39,7 +42,3 @@ ul {
     background: #6daadd;
 }
 
-cart
-{
-    color: red;
-}
