@@ -1,6 +1,7 @@
 .greeting
 {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 2em;
     color: rgb(39, 39, 39);
     display: flex;
     justify-content: center;
