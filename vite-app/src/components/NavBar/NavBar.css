@@ -4,18 +4,19 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     text-align: center;
-    gap: 4rem;
-    background-color: #8fb6d8;
+    background-color: #fafafa;
+    filter: brightness(100%);
 }
 
 .nav-title
 .nav-links {
     gap: 2rem;
     display: flex;
+    text-decoration: none;
 }
 
 .nav-link  {
-    color: #0B4666;
+    color: #0a0b0b;
     list-style: none;
 }
 
@@ -37,8 +38,14 @@ ul {
 }
 
 .nav-link:hover:after {
-    color: #6daadd;
+    content: "\1F43E\1F43E\1F43E";
+    color: #414448;
     width: 100%;
-    background: #6daadd;
+    /*background: #810808;*/
 }
 
+
+.div-cart
+{
+    margin-top: 1rem;
+}

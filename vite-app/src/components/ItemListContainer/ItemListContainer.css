@@ -1,9 +1,11 @@
 .greeting
 {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 2em;
-    color: rgb(39, 39, 39);
-    display: flex;
-    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #96010c;
     margin-top: 2rem;
+    font-size: 5em;
+    line-height: 1.5em; /* altura de línea mayor que la altura del texto */
+    text-align: center;
+    width: 350px;
 }

@@ -6,12 +6,13 @@ import React from "react";
 const NavBar = () => {
     return (
         <nav className="nav">
-            <h3 className="nav-title">Neko </h3>
+            <h3 className="nav-title">Neko-Store </h3>
             <div className="nav-links">
                 <ul>
                     <li className="nav-link">Rascadores</li>
                     <li className="nav-link">Camitas</li>
                     <li className="nav-link">Juguetes</li>
+                    <li className="nav-link">Snacks</li>
                 </ul>
             </div>
             <CartWidget />
