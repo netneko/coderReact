@@ -1,11 +1,10 @@
 .greeting
 {
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    color: #96010c;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #222121d9;
     margin-top: 2rem;
-    font-size: 5em;
+    font-size: 6em;
     line-height: 1.5em; /* altura de línea mayor que la altura del texto */
     text-align: center;
-    width: 350px;
+    width: 380px;
 }

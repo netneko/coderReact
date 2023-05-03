@@ -1,5 +1,6 @@
 .nav {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -9,8 +10,13 @@
 }
 
 .nav-title
+{
+    display: flex;
+    margin-top: 1.2rem;
+
+}
+
 .nav-links {
-    gap: 2rem;
     display: flex;
     text-decoration: none;
 }
@@ -25,7 +31,7 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     padding-inline-start: 0;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .nav-link::after {
@@ -47,5 +53,5 @@ ul {
 
 .div-cart
 {
-    margin-top: 1rem;
+    margin-top: 1.2rem;
 }
