@@ -7,14 +7,12 @@ import {Link, NavLink} from 'react-router-dom';
 const NavBar = () => {
     return (
         <nav className="nav">
-            <h3 className="nav-title">Neko-Store </h3>
+            <h3 className="nav-title">Zucchi - Tienda de sabores</h3>
             <div className="nav-links">
                 <ul>
-                    <li className="nav-link">Rascadores</li>
-                    <li className="nav-link">Camitas</li>
-                    <li className="nav-link">Juguetes</li>
-                    <li className="nav-link">Snacks</li>
-                    <li className="nav-link">Disfraces</li>
+                    <li className="nav-link">Sales</li>
+                    <li className="nav-link">Rubs</li>
+                    <li className="nav-link">Especias</li>
                 </ul>
             </div>
             <CartWidget />

@@ -44,10 +44,9 @@ ul {
 }
 
 .nav-link:hover:after {
-    content: "\1F43E\1F43E\1F43E";
     color: #414448;
     width: 100%;
-    /*background: #810808;*/
+    background: #0f1022;
 }
 
 
