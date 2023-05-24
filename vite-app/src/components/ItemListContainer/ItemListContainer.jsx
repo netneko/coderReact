@@ -5,12 +5,11 @@ import Item from '../Item/Item';
 function ItemListContainer() {
     console.log(products);
     return <div>
-        ItemListContainer
         {
             products.map(itemInArray => (
                 <Item
                     key={itemInArray.id}
-                   {...itemInArray}
+                    {...itemInArray}
                 />
             ))
         }
