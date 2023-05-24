@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     text-align: center;
-    background-color: #fafafa;
+    background-color: #869d79e3;
     filter: brightness(100%);
 }
 
@@ -22,7 +22,7 @@
 }
 
 .nav-link  {
-    color: #0a0b0b;
+    color: #fafafa;
     list-style: none;
 }
 
@@ -46,7 +46,7 @@ ul {
 .nav-link:hover:after {
     color: #414448;
     width: 100%;
-    background: #0f1022;
+    background: #ffd900e1;
 }
 
 

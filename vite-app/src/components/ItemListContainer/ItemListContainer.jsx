@@ -1,4 +1,6 @@
 import './ItemListContainer.css'
+import products from '../../data/products';
+
 const ItemListContainer =({greeting})=>
 {
     return (

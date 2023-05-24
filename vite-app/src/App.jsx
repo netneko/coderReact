@@ -14,6 +14,7 @@ function App() {
       <NavBar />
       <ItemListContainer greeting={'Todo para tus gatos'}/>
       <Flex>
+        <ItemListContainer/>
         <ItemCount inicio={1} stock={10} onAdd={(cant) => console.log('Cantidad agregada!',cant)}/>
       </Flex>
       
