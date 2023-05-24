@@ -4,7 +4,7 @@ const products = [
       title: "Sal del Himalaya",
       category: "Sales",
       stock: 10,
-      image: "sal_himalaya.jpg",
+      image: "/assets/assets/sal_himalaya.jpg",
       price: 9.99,
       description: "Sal rosada del Himalaya, rica en minerales y con un sabor único."
     },

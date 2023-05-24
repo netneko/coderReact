@@ -1,13 +1,20 @@
 import './ItemListContainer.css'
 import products from '../../data/products';
+import Item from '../Item/Item';
 
-const ItemListContainer =({greeting})=>
-{
-    return (
-        <div>
-            <h1 className='greeting'>{greeting}</h1>
-        </div>
-    )
+function ItemListContainer() {
+    console.log(products);
+    return <div>
+        ItemListContainer
+        {
+            products.map(itemInArray => (
+                <Item
+                    key={itemInArray.id}
+                   {...itemInArray}
+                />
+            ))
+        }
+    </div>;
 }
 
-export default ItemListContainer
+export default ItemListContainer;
