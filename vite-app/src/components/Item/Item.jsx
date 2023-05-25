@@ -2,6 +2,7 @@ import { useState } from "react";
 import './Item.css'
 import ItemCount from "../ItemCount/ItemCount";
 
+
 function CardDescription({ price, category }) {
   return (
     <div className="item-card_detail">
@@ -11,7 +12,7 @@ function CardDescription({ price, category }) {
   );
 }
 
-function Item({ id,title,category ,stock,image, price,description }) {
+function Item({ id,title,category ,stock,image, price,description,color }) {
 
   return (
     <div className="item-card">
@@ -27,6 +28,7 @@ function Item({ id,title,category ,stock,image, price,description }) {
 
       <CardDescription price={price}  />
       <ItemCount stock={5} />
+      <button>Ver detalle</button>
     </div>
   );
 }
