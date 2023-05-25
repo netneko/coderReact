@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Flex({children}) {
+function Flex({ children }) {
     const flexStyle =
     {
         display: "flex",
@@ -11,7 +11,7 @@ function Flex({children}) {
 
     return (
         <div style={flexStyle}>
-           {children}
+            {children}
         </div>
     )
 }

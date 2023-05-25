@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './Item.css'
-import ItemCount from "../ItemCount/ItemCount";
+
 
 
 function CardDescription({ price, category }) {
