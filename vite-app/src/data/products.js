@@ -1,4 +1,4 @@
-const products = [
+const productsRS = [
     {
       id: 1,
       title: "Sal del Himalaya",
@@ -136,4 +136,4 @@ const products = [
     }
   ];
   
-  export default products;
+  export default productsRS;
