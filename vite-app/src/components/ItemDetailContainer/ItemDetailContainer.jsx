@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import productsDB from "../../data/products";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
 /* AsnyMock ----------------------------------------------- 
 function getItemData() {
@@ -25,7 +26,7 @@ export const getItemDataById = (productId) => {
 
 function ItemDetailContainer(props) {
     // estado
-    const { productId } = props;
+    const { productId } = useParams();
     const [product, setProduct] = useState({});
 
     useEffect(() => {
@@ -37,9 +38,9 @@ function ItemDetailContainer(props) {
 
     //UI
     return (
-        <div>
-            <ItemDetail product={product} />
-            
+        <div className="ItemDetailContainer">
+            <ItemDetail {...product} />
+
         </div>
     );
 }

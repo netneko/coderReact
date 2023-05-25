@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import productsDB from "../../data/products";
 import ItemList from "../ItemList/ItemList";
 
+/*Navegacion*/
+import { useParams } from "react-router-dom";
+
+
 /*Esto podria ponerlo dentro del archivo de products.js tambien pero como lo vimos en clase asi prfiero dejarlo aca*/
 function getData() {
     return new Promise((resolve) => {

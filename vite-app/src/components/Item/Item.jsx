@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Item.css'
+import { Link } from "react-router-dom";
 
 
 
@@ -12,7 +13,7 @@ function CardDescription({ price, category }) {
   );
 }
 
-function Item({ id,title,category ,stock,image, price,description,color }) {
+function Item({ id, title, category, stock, image, price, description, color }) {
 
   return (
     <div className="item-card">
@@ -26,11 +27,14 @@ function Item({ id,title,category ,stock,image, price,description,color }) {
         <img src={image} alt="imagen"></img>
       </div>
 
-      <CardDescription price={price}  />
-      <ItemCount stock={5} />
-      <button>Ver detalle</button>
+      <CardDescription price={price} />
+      <footer>
+        <Link to={`/item/${id}`} className='Option'>Ver detalle</Link>
+      </footer>
+
     </div>
   );
 }
 
 export default Item;
+

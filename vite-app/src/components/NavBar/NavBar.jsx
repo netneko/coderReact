@@ -7,7 +7,9 @@ import {Link, NavLink} from 'react-router-dom';
 const NavBar = () => {
     return (
         <nav className="nav">
-            <h3 className="nav-title">Zucchi - Tienda de sabores</h3>
+            <Link to='/'>
+                <h3 className="nav-title">Zucchi - Tienda de sabores</h3>
+            </Link>
             <div className="nav-links">
                 <ul>
                     <li className="nav-link">Sales</li>
@@ -21,4 +23,5 @@ const NavBar = () => {
     )
 }
 
+/*Saque esto    <h3 className="nav-title">Zucchi - Tienda de sabores</h3> */
 export default NavBar;
