@@ -1,14 +1,14 @@
 import Item from "../Item/Item";
 import { useEffect, useState } from "react";
 
-/* AsyncMock - servicioMock / backend/nube/api */
-import productsRS from "../../data/products";
+/* AsyncMock - servicioMock  */
+import productsDB from "../../data/products";
 import ItemList from "../ItemList/ItemList";
 
 function getData() {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(productsRS);
+            resolve(productsDB);
         }, 2000);
     });
 }
