@@ -11,14 +11,9 @@ const NavBar = () => {
                 <h3 className="nav-title">Zucchi - Tienda de sabores</h3>
             </Link>
             <div className="nav-links">
-                <ul>
-                    <div className="Categories">
-                        <NavLink to={`/category/Sales`} className={({isActive})=> isActive ? 'ActiveOption' : 'Option'}>Sales</NavLink>
-                    </div>
-                    <li className="nav-link">Sales</li>
-                    <li className="nav-link">Rubs</li>
-                    <li className="nav-link">Especias</li>
-                </ul>
+                        <NavLink to={`/category/Sales`} style={{ color: '#fafafa' , marginRight:'1rem'}} className={({isActive})=> isActive ? 'ActiveOption' : 'Option'}>Sales</NavLink>
+                        <NavLink to={`/category/Rubs`} style={{ color: '#fafafa' ,marginRight:'1rem'}} className={({isActive})=> isActive ? 'ActiveOption' : 'Option'}>Rubs</NavLink>
+                        <NavLink to={`/category/Especias`} style={{ color: '#fafafa',marginRight:'1rem' }} className={({isActive})=> isActive ? 'ActiveOption' : 'Option'}>Especias</NavLink>
             </div>
             <CartWidget />
         </nav>
@@ -26,5 +21,5 @@ const NavBar = () => {
     )
 }
 
-/*Saque esto    <h3 className="nav-title">Zucchi - Tienda de sabores</h3> */
+
 export default NavBar;
