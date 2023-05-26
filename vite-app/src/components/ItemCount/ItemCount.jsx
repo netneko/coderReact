@@ -16,7 +16,7 @@ const ItemCount = ({ stock, inicio, onAdd }) => {
         }
     };
 
-   
+
     return (
         <div className="Contador">
             <div className="Controles">
