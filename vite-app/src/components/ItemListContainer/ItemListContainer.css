@@ -1,10 +1,5 @@
-.greeting
-{
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: #222121d9;
-    margin-top: 2rem;
-    font-size: 6em;
-    line-height: 1.5em; /* altura de línea mayor que la altura del texto */
-    text-align: center;
-    width: 380px;
+.ItemList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

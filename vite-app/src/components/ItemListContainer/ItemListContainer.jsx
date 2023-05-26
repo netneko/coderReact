@@ -1,4 +1,4 @@
-import Item from "../Item/Item";
+import "./ItemListContainer.css";
 import { useEffect, useState } from "react";
 
 /* AsyncMock - servicioMock  */
@@ -30,7 +30,7 @@ function ItemListContainer() {
         });
     }, []);
 
-    return <ItemList products={products} />;
+    return <ItemList className="ItemList" products={products} />;
 }
 
 export default ItemListContainer;

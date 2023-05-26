@@ -1,9 +1,11 @@
-/* AsyncMock - servicioMock / backend/nube/api */
+
 import { useEffect, useState } from "react";
-import productsDB from "../../data/products";
+import './ItemDetailContainer.css'
 import ItemDetail from "../ItemDetail/ItemDetail";
-import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import productsDB from "../../data/products";
+
+
 
 /* AsnyMock ----------------------------------------------- 
 function getItemData() {
@@ -27,7 +29,7 @@ export const getItemDataById = (productId) => {
 
 function ItemDetailContainer(props) {
     // estado
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const { productId } = useParams();
 
     useEffect(() => {
@@ -40,10 +42,11 @@ function ItemDetailContainer(props) {
     //UI
     return (
         <div className="ItemDetailContainer">
-            <ItemDetail {...product}/ >
+            <ItemDetail product={product} />
         </div>
     );
 }
+
 
 export default ItemDetailContainer;
 

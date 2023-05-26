@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 function CardDescription({ price, category }) {
   return (
     <div className="item-card_detail">
