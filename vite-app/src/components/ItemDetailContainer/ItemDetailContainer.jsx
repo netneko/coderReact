@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import productsDB from "../../data/products";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
 /* AsnyMock ----------------------------------------------- 
@@ -39,12 +40,11 @@ function ItemDetailContainer(props) {
     //UI
     return (
         <div className="ItemDetailContainer">
-            <ItemDetail {...product} />
-
+            <ItemDetail {...product}/ >
         </div>
     );
 }
 
 export default ItemDetailContainer;
 
-/*Estoy hardcodeando el stock por ahora*/
+

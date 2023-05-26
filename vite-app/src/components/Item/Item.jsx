@@ -17,11 +17,9 @@ function Item({ id, title, category, stock, image, price, description, color }) 
 
   return (
     <div className="item-card">
-
       <div className="item-card_header">
-        <h2>{title}</h2>
+        <h2 className="cardTitle">{title}</h2>
         <small>{category}</small>
-        <h3>{stock}</h3>
       </div>
       <div className="item-card_img">
         <img src={image} alt="imagen"></img>

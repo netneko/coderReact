@@ -8,7 +8,7 @@ a {
 }
 
 .item-card {
-  color: black;
+  color: rgb(30, 29, 29);
   text-align: center;
   position: relative;
   margin: 10px 15px;
@@ -23,9 +23,10 @@ a {
 }
 
 .item-card_header {
-  background-color: rgb(233, 233, 233);
-  font-size: large;
+  background-color:#899980e3;
+  font-size:medium;
   padding-bottom: 12px;
+  color: #fafafa;
 }
 
 .item-card_header h2 {
@@ -59,7 +60,7 @@ a {
 
 .item-card_price-tag {
   font-size: 28px;
-  color: rgb(75, 75, 75);
+  color: rgb(30, 30, 31);
   font-weight: 900;
   margin: 5px auto 15px;
 }
@@ -68,28 +69,12 @@ a {
   display: block;
 }
 
-.item-card_favicon {
-  display: none;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  top: 0;
-  right: 0;
-  border-radius: 50%;
-  border: none;
-  margin: 5px 15px;
-  padding: 8px 8px;
-  cursor: pointer;
-  background-color: rgb(219, 219, 219);
-  color: #8c8c8e;
-}
 
-.item-card_favicon.favorite {
-  display: block;
-  background-color: rgb(223, 117, 84);
-  color: white;
-}
 
 small {
-  color: #8c8c8e;
+  color: #0c0c0c;
+}
+.stock
+{
+  font-size:0.8rem;
 }
