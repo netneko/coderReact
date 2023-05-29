@@ -1,6 +1,8 @@
 import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
+
+
 function ItemDetail({ product }) {
     return (
         <div className="card-detail_main">
@@ -18,3 +20,4 @@ function ItemDetail({ product }) {
 }
 
 export default ItemDetail;
+

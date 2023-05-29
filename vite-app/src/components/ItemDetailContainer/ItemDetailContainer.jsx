@@ -34,6 +34,7 @@ function ItemDetailContainer(props) {
 }
 
 
+
 export default ItemDetailContainer;
 
 
