@@ -1,6 +1,6 @@
 const productsDB = [
     {
-      id: "1",
+      id: 1,
       title: "Sal del Himalaya",
       category: "Sales",
       stock: 10,
@@ -9,7 +9,7 @@ const productsDB = [
       description: "Sal rosada del Himalaya, rica en minerales y con un sabor único."
     },
     {
-      id: "2",
+      id: 2,
       title: "Pimienta Negra",
       category: "Especias",
       stock: 15,
@@ -18,7 +18,7 @@ const productsDB = [
       description: "Pimienta negra de alta calidad, ideal para sazonar tus platos favoritos."
     },
     {
-      id: "3",
+      id: 3,
       title: "Curry en Polvo",
       category: "Especias",
       stock: 8,
@@ -27,7 +27,7 @@ const productsDB = [
       description: "Mezcla de especias en polvo perfecta para darle un toque exótico a tus comidas."
     },
     {
-      id: "4",
+      id: 4,
       title: "Ras el Hanout",
       category: "Rubs",
       stock: 5,
@@ -36,7 +36,7 @@ const productsDB = [
       description: "Mezcla de especias marroquí para condimentar carnes y platos tradicionales."
     },
     {
-      id: "5",
+      id: 5,
       title: "Sal de Trufa Negra",
       category: "Sales",
       stock: 12,
@@ -45,7 +45,7 @@ const productsDB = [
       description: "Sal gourmet con auténtico aroma y sabor a trufa negra, perfecta para realzar tus platos."
     },
     {
-      id: "6",
+      id: 6,
       title: "Za'atar",
       category: "Especias",
       stock: 20,
@@ -54,7 +54,7 @@ const productsDB = [
       description: "Mezcla de especias mediterráneas para aderezar panes, carnes y ensaladas."
     },
     {
-      id: "7",
+      id: 7,
       title: "Rústico Italiano",
       category: "Rubs",
       stock: 3,
@@ -63,7 +63,7 @@ const productsDB = [
       description: "Mezcla de hierbas y especias italianas para darle un toque mediterráneo a tus platos."
     },
     {
-      id: "8",
+      id: 8,
       title: "Chimichurri Argentino",
       category: "Rubs",
       stock: 6,

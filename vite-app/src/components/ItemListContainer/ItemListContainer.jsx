@@ -21,16 +21,24 @@ function getData() {
 
 function ItemListContainer() {
     let [products, setProducts] = useState([]);
+    const { categoryid } = useParams();
 
     useEffect(() => {
-        getData()
-        .then((respuesta) => {
-            console.log("llegaron los datos", respuesta);
-            setProducts(respuesta);
+        getData().then((respuesta) => {
+            if (categoryid) {
+                const filterProducts = respuesta.filter(
+                    (item) => item.category === categoryid
+                );
+                setProducts(filterProducts);
+            } else {
+                setProducts(respuesta);
+            }
         });
-    }, []);
+    }, [categoryid]);
 
-    return <ItemList className="ItemList" products={products} />;
+    return <ItemList products={products} />;
 }
+
+
 
 export default ItemListContainer;

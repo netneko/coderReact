@@ -11,11 +11,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
-          <Route path='/category/:categoryId' element={<ItemListContainer />} />
-          <Route path="/category/Sales" element={<ItemListContainer />} />
-          <Route path="/category/Rubs" element={<ItemListContainer />} />
-          <Route path="/category/:Especias" element={<ItemListContainer />} />
-          <Route path='/item/productId' element={<ItemDetailContainer />} />
+          <Route path='/category/:categoryid' element={<ItemListContainer />} />
+          <Route path='/item/:productId' element={<ItemDetailContainer />} />
           <Route path='*' element={<h1>404 Elemento no encontrado</h1>} />
         </Routes>
       </div>

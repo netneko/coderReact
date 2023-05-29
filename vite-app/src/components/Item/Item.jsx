@@ -38,4 +38,3 @@ function Item({ id, title, category, stock, image, price, description, color }) 
 }
 
 export default Item;
-

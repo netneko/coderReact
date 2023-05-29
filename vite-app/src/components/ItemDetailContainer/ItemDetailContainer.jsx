@@ -8,11 +8,10 @@ import productsDB from "../../data/products";
 export const getItemDataById = (productId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(productsDB.find(prod => prod.id === productId))
+            resolve(productsDB.find(prod => prod.id === parseInt(productId)))
         }, 500)
     })
 }
-
 
 /* ------------------------------------------------ */
 
