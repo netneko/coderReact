@@ -17,7 +17,7 @@ export const getItemDataById = (productId) => {
 
 function ItemDetailContainer(props) {
     // estado
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState({});
     const { productId } = useParams();
 
     useEffect(() => {

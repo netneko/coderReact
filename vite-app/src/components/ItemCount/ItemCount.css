@@ -1,0 +1,53 @@
+.itemcount-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1px auto;
+    text-align: center;
+    justify-content: space-around;
+    max-width: 240px;
+    color: #666363;
+}
+
+.itemcount-control {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 12px 2px 10px;
+    margin-top: 1px;
+}
+
+.Button {
+    height: 2rem;
+    width: 2.5rem;
+    border: 0.5px solid gray;
+    border-radius: 4px;
+    background-color: #869d79e3;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Number {
+    color: #666363;
+    margin: 1px 0.5px 1px 0.5px;
+}
+
+.Button-add {
+    padding: 6px 9px 6px 9px;
+    margin: 3px 0 6px 0;
+    color: #2a2929;
+    background-color: #869d79e3;
+    border: 0.5px solid #869d79e3;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Button-add:hover {
+    /* Sombra cuando se coloca el cursor sobre el botón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.Button-add:active {
+    /* Oscurecer el color cuando se hace clic en el botón */
+    background-color: #6c805ad9;
+}
