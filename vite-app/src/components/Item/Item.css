@@ -4,7 +4,13 @@ a {
 }
 
 .font-xl {
-  font-size: 20 px;
+  font-size: 18 px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
 }
 
 .item-card {
@@ -18,8 +24,7 @@ a {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.22);
   background-color: #fff;
   overflow: hidden;
-  transition: all 0.20s ease-in;
-  cursor: pointer;
+  transition: all 0.20s ease-in
 }
 
 .item-card_header {
@@ -35,7 +40,8 @@ a {
 }
 
 .item-card_header small {
-  font-size: 12px;
+  font-size: 14px;
+  color: #fafafa;
 }
 
 .item-card_img {
@@ -69,12 +75,6 @@ a {
   display: block;
 }
 
-
-
 small {
   color: #0c0c0c;
-}
-.stock
-{
-  font-size:0.8rem;
 }
