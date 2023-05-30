@@ -6,7 +6,7 @@ const CartWidget = () =>
     return(
         <div className="div-cart">
             <img src="/assets/cart.svg" className="cart-icon" alt="cart-widget" />
-            0
+            <h3 className='item-cant'>0</h3>
         </div>
     )
 }

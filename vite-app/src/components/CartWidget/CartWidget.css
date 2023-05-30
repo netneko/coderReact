@@ -1,3 +1,12 @@
+.div-cart
+{
+    display: flex;
+}
+
+.item-cant
+{
+    color: #fafafa;
+}
 .cart-icon
 {
     color:#fafafa;
