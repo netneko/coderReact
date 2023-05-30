@@ -3,16 +3,18 @@ a {
   text-decoration: none;
 }
 
-.font-xl {
-  font-size: 18 px;
-}
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+.item-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /*display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
-  justify-content: center;
+  justify-content: center;*/
 }
 
+/*Cada tarjeta*/
 .item-card {
   color: rgb(30, 29, 29);
   text-align: center;
@@ -27,23 +29,28 @@ a {
   transition: all 0.20s ease-in
 }
 
-.item-card_header {
+/*Header de cada tarjeta*/
+.item-card-header {
   background-color:#899980e3;
   font-size:medium;
   padding-bottom: 12px;
   color: #fafafa;
+  padding-top: 5px;
 }
 
-.item-card_header h2 {
-  padding: 16px 2px 0px;
+
+/*Categoria de cada tarjeta*/
+.item-category {
+  padding: 0px 2px 0px;
   margin: 0px;
 }
 
-.item-card_header small {
+.item-category  h3{
   font-size: 14px;
   color: #fafafa;
 }
 
+/*Imagen de cada tarjeta*/
 .item-card_img {
   width: 320px;
   height: 260px;
@@ -52,7 +59,6 @@ a {
 .item-card_img img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: cover;
 }
 
 .item-card:hover {
@@ -64,17 +70,15 @@ a {
   padding: 12px 8px;
 }
 
-.item-card_price-tag {
-  font-size: 28px;
-  color: rgb(30, 30, 31);
-  font-weight: 900;
+.item-price {
+  font-size: 26px;
+  color: #666363;
+  font-weight: 800;
   margin: 5px auto 15px;
 }
 
-.item-card:hover .item-card_favicon {
-  display: block;
-}
-
-small {
-  color: #0c0c0c;
+a.Option 
+{
+  color: #666363;
+  font-weight: 700;
 }
