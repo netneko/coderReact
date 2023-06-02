@@ -1,10 +1,10 @@
-.banner-container {
+.banner-container.banner {
     width: 100%;
     overflow: hidden;
 }
 
-.banner-img {
+.banner-container.banner .banner-img {
     width: auto;
-    height: 100%;
+    height: 50%;
     object-fit: cover;
 }
