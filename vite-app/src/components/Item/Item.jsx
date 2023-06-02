@@ -15,7 +15,7 @@ function Item({ id, title, category, stock, image, price, description, color }) 
           <img src={image} alt="imagen"></img>
         </div>
         <h3 className="item-price">
-          {price}
+          {'$'}{price}
         </h3>
         <footer>
           <Link to={`/item/${id}`} className='Option'>Ver detalle</Link>
