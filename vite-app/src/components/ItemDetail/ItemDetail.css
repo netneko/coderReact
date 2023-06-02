@@ -12,7 +12,10 @@
   background-color: #fff;
   overflow: hidden;
 }
-
+.ItemDetailContainer
+{
+  margin-top: 6rem;
+}
 .card-img {
   width: 20rem;
   height: 20rem;
