@@ -17,9 +17,9 @@ function Item({ id, title, category, stock, image, price, description, color }) 
         <h3 className="item-price">
           {'$'}{price}
         </h3>
-        <footer>
+        <div className="footer-card">
           <Link to={`/item/${id}`} className='Option'>Ver detalle</Link>
-        </footer>
+        </div>
       </div>
     </div>
 

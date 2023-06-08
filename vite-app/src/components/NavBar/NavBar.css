@@ -42,8 +42,9 @@
     width: 100%;
 }
 
-.nav-link.active {
+.ActiveOption {
     color: #fafafa;
+    margin: 0 2rem 0 2rem;
 }
 
 .div-cart {
