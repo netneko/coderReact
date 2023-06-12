@@ -22,6 +22,8 @@
     border: 0.5px solid gray;
     border-radius: 4px;
     background-color: #869d79e3;
+    border-color:#869d79e3;
+    color: #fafafa;
     transition: box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -34,7 +36,7 @@
 .Button-add {
     padding: 6px 9px 6px 9px;
     margin: 3px 0 6px 0;
-    color: #2a2929;
+    color: #fafafa;
     background-color: #869d79e3;
     border: 0.5px solid #869d79e3;
     border-radius: 4px;
