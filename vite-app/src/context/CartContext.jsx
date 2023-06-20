@@ -4,28 +4,38 @@ export const CartContext = createContext({ cart: [] });
 
 export function CartContextProvider({ children }) {
     const [cart, setCart] = useState([]);
-    console.log(cart);
+    //console.log(cart);
 
     const isInCart = (itemId) => {
-        return cart.some(prod =>  prod.id !== itemId)
+        return cart.some(prod => prod.id !== itemId)
     }
 
     const addItem = (item, quantity) => {
         if (!isInCart(item.id)) {
-            setCart(prev => [...prev, {...item, quantity}]);
+            // El producto no está en el carrito, agrégalo
+            setCart((prev) => [...prev, { ...item, quantity }]);
         } else {
-            console.error('El producto ya fue agregado');
+            // El producto ya está en el carrito, actualiza la cantidad
+            setCart((prev) =>
+                prev.map((prod) =>
+                    prod.id === item.id ? { ...prod, quantity: prod.quantity + quantity } : prod
+                )
+            );
         }
     };
-    
+
+
+
 
     function countItems() {
         let total = 0;
         cart.forEach((item) => {
-            total += item.count;
+            total += item.quantity; // Sumar la cantidad de cada producto
         });
         return total;
     }
+
+
 
     function countTotalPrice() {
         // Implementar la función para calcular el precio total del carrito
