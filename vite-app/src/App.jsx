@@ -5,10 +5,13 @@ import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import React, {createContext} from 'react';
+import React, {useContext, createContext} from 'react';
+import { CartContextProvider } from './context/CartContext';
+
 
 function App() {
   return (
+  <CartContextProvider>
     <BrowserRouter>
       <div className='App'>
         <NavBar /> 
@@ -22,7 +25,7 @@ function App() {
         <Footer/>
       </div>
     </BrowserRouter>
-    
+    </CartContextProvider>
   );
 }
 
