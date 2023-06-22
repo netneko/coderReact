@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 
+
 export const CartContext = createContext({ cart: [], totalItems: 0 });
 
 export function CartContextProvider({ children }) {
@@ -25,25 +26,36 @@ export function CartContextProvider({ children }) {
         setTotalItems((prevTotal) => prevTotal + quantity);
     };
 
+    //Remover un item especifico del carrito
     function removeItem(idDelete) {
         setCart(cart.filter((item) => item.id !== idDelete));
     }
 
+    //Vaciar carrito
     const clearCart = () => {
         setCart([]);
         setTotalItems(0);
     }
 
+    //Esta funcion es para calcular el importe TOTAL de todo el carrito
     function countTotalPrice() {
-        // Implementar la función para calcular el precio total del carrito
-        //PROBARLA CON EL CHECKOUT
-        let totalPrice = 0;
-        cart.forEach((item) =>{
+        const totalPrice = cart.reduce((accumulator, item) => {
             const itemTotal = item.price * item.quantity;
-            totalPrice = totalPrice + itemTotal;
-        } );
+            return accumulator + itemTotal;
+        }, 0);
         return totalPrice;
     }
+
+    // Esta funcion es para calcular el subTotal de cada producto
+    function subTotalItem() {
+        let totalPrice = 0;
+        cart.forEach((item) => {
+            const itemTotal = item.price * item.quantity;
+            totalPrice = totalPrice + itemTotal;
+        });
+        return totalPrice;
+    }
+
 
     const cartContextValue = {
         cart,
@@ -52,6 +64,7 @@ export function CartContextProvider({ children }) {
         addItem,
         removeItem,
         countTotalPrice,
+        subTotalItem,
         clearCart,
     };
 

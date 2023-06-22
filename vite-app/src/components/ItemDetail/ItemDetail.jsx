@@ -40,7 +40,7 @@ function ItemDetail({ product}) {
                             <button className="Button-fin">Finalizar compra</button>
                         </Link>
                     ) : (
-                        <ItemCount inicio={1} stock={10} onAdd={handleonAdd} />
+                        <ItemCount inicio={1} stock={product.stock} onAdd={handleonAdd} />
                     )}
                 </div>
             </div>

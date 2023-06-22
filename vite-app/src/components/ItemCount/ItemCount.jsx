@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './ItemCount.css';
 
+
 const ItemCount = ({ stock, inicio, onAdd }) => {
     const [cant, setCant] = useState(inicio || 0);
 
@@ -17,7 +18,13 @@ const ItemCount = ({ stock, inicio, onAdd }) => {
         }
     };
 
+    
+    //Si el stock es 0 inhabilito el botón "agregar al carrito" y lo pongo en gris    
+    const styleButton = {
+        backgroundColor: stock === 0 ? "grey" : "#869d79e3"
+    }
 
+    console.log(stock)
     return (
         <div className="itemcount-container">
             <div className="itemcount-control">
@@ -30,7 +37,7 @@ const ItemCount = ({ stock, inicio, onAdd }) => {
                 </button>
             </div>
             <div>
-                <button className="Button-add" onClick={() => onAdd(cant)} disabled={!stock}>
+                <button style={styleButton} className="Button-add" onClick={() => onAdd(cant)} disabled={!stock}>
                     Agregar al carrito
                 </button>
             </div>
@@ -38,4 +45,6 @@ const ItemCount = ({ stock, inicio, onAdd }) => {
     );
 };
 
+
+//Mirar clae Context 1.25
 export default ItemCount;

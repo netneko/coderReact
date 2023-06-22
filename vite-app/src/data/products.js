@@ -3,7 +3,7 @@ const productsDB = [
     id: 1,
     title: "Sal del Himalaya",
     category: "Sales",
-    stock: 10,
+    stock: 12,
     image: "/assets/sal_himalaya.jpg",
     price: 9.99,
     description: "Sal rosada del Himalaya, rica en minerales y con un sabor único."
@@ -12,7 +12,7 @@ const productsDB = [
     id: 2,
     title: "Pimienta Negra",
     category: "Especias",
-    stock: 15,
+    stock: 0,
     image: "/assets/pimienta_negra.jpg",
     price: 5.99,
     description: "Pimienta negra de alta calidad, ideal para sazonar tus platos favoritos."
