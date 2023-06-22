@@ -1,5 +1,7 @@
 import "./ItemListContainer.css";
 import { useEffect, useState } from "react";
+import {getDocs,collection,query,where} from  'firebase/firestore'
+import { db } from "../../services/firebase/firebaseConfig";
 
 /* AsyncMock - servicioMock  */
 import productsDB from "../../data/products";

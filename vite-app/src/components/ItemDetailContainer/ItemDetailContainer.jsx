@@ -4,6 +4,9 @@ import './ItemDetailContainer.css'
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import productsDB from "../../data/products";
+import {getDocs,collection,query,where} from  'firebase/firestore'
+import { db } from "../../services/firebase/firebaseConfig";
+
 
 export const getItemDataById = (productId) => {
     return new Promise((resolve) => {
