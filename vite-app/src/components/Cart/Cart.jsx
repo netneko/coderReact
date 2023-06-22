@@ -44,8 +44,7 @@ const Cart = () => {
                     <tr>
                         <td colSpan="2">Total del carrito:</td>
                         <td colSpan="2">{countTotalPrice()}</td>
-                        <button onClick={()=> clearCart()}> Vaciar carrito</button>
-                    </tr>
+                        </tr><button onClick={()=> clearCart()}> Vaciar carrito</button>
                 </tfoot>
             </table>
         </div>
