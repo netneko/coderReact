@@ -11,7 +11,8 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
 
-/*Esto podria ponerlo dentro del archivo de products.js tambien pero como lo vimos en clase asi prfiero dejarlo aca*/
+/*Esto podria ponerlo dentro del archivo de products.js tambien pero como lo vimos en clase asi prfiero dejarlo aca
+ESTA FUNCION VOY A REEMPLAZARLA EN firebaseConfig*/
 function getData() {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -19,6 +20,7 @@ function getData() {
         }, 2000);
     });
 }
+
 /* ---------------------------------------------- */
 
 function ItemListContainer() {

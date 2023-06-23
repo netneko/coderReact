@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore} from "firebase/app";
+import { getFirestore,collection,getDocs} from "firebase/app";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,5 +15,31 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const db =getFirestore(app)
+const firebaseApp = initializeApp(firebaseConfig);
+export const db =getFirestore(firebaseApp);
+console.log(db);
+
+//remplazo de funcion de ItemListContainer.jsx
+export async function getData() {
+  const productsCollectionRef = collection(db, "products");
+  const productsSnapshot = await getDocs(productsCollectionRef);
+  const arrayDocs = productsSnapshot.docs;
+
+  const dataDocs = arrayDocs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
+  });
+
+  return dataDocs;
+}
+
+//reemplazo de funcion de ItemDetailContainer.jsx
+function getItemDataById()
+{
+
+}
+
+//Tambien falta la de filtrar por categoria
+function getCategoryData ()
+{
+
+}

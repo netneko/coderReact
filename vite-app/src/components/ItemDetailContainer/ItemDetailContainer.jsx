@@ -7,7 +7,7 @@ import productsDB from "../../data/products";
 import {getDocs,collection,query,where} from  'firebase/firestore'
 import { db } from "../../services/firebase/firebaseConfig";
 
-
+// Esta funcion voy a reemplazarla en firebaseConfig.jsx
 export const getItemDataById = (productId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
