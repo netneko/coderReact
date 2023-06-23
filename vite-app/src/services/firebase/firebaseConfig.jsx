@@ -68,3 +68,12 @@ export async function getCategoryData(idCategory) {
 
   return dataDocs;
 }
+
+
+//Ver como pasar esta funcon a Checkout.jsx
+export async function createOrder(data) {
+  const ordersCollectionRef = collection(db, "orders");
+
+  const response = await addDoc(ordersCollectionRef, data);
+  return response.id;
+}

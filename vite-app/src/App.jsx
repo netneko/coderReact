@@ -23,6 +23,7 @@ function App() {
           <Route path='/item/:productId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<h1>404 Elemento no encontrado</h1>} />
+          
         </Routes>
         <Footer/>
       </div>
@@ -34,3 +35,4 @@ function App() {
 export default App;
 
 
+//<Route path="/order-confirmation/:orderid" element={<OrderConfirm />}/>

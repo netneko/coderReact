@@ -40,7 +40,7 @@ function ItemListContainer() {
             });
     }, [categoryid]);
 
-    return <ItemList isLoading={isLoading} products={products} />;
+    return <ItemList products={products} />;
 }
 
 export default ItemListContainer;
