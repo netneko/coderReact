@@ -5,6 +5,7 @@ import { getFirestore,
   getDoc,
   doc,
   query,
+  addDoc,
   where} from 'firebase/firestore';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -75,5 +76,6 @@ export async function createOrder(data) {
   const ordersCollectionRef = collection(db, "orders");
 
   const response = await addDoc(ordersCollectionRef, data);
+  console.log("orden creada!",response.id)
   return response.id;
 }

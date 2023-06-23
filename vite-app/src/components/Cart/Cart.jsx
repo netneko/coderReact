@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import { createOrder } from "../../services/firebase/firebaseConfig";
 
 const Cart = () => {
     const { cart, totalItems, countTotalPrice, clearCart, removeItem, subTotalItem } = useContext(CartContext);
@@ -15,6 +17,28 @@ const Cart = () => {
             </div>
         );
     }
+
+    function handleConfirm() {
+        /*
+        1. Array con listado de items
+        2. Datos del usuario (nombre,telefono,etc)
+        3. timestamp o fecha
+        4. Precio total de la compra (traer del Context)
+         */
+        const order = {
+            items: cart,
+            buyer: {
+                name:"",
+                phone:"",
+                email:""
+            },
+            date: new Date(),
+            price: countTotalPrice()
+        };
+
+        createOrder(order)
+    }
+
 
     return (
         <div>
@@ -39,19 +63,25 @@ const Cart = () => {
                             </td>
                         </tr>
                     ))}
-                </tbody>
-                <tfoot>
                     <tr>
                         <td colSpan="2">Total del carrito:</td>
                         <td colSpan="2">{countTotalPrice()}</td>
-                        </tr><button onClick={()=> clearCart()}> Vaciar carrito</button>
-                </tfoot>
+                    </tr>
+                </tbody>
             </table>
+            <button onClick={() => clearCart()}>Vaciar carrito</button>
+            <button onClick={handleConfirm}>Crear orden de compra</button>
         </div>
     );
+    
+
+
 };
 
 export default Cart;
 
 
 //Me gustaria agregar los botones para agregar o restar unidades de un item
+/* {<CheckoutForm /> Descoemntar esto al terminar de hacer la funcionalidad}
+VA DEBAJO DEL CIERRE DE LA TABLA
+*/

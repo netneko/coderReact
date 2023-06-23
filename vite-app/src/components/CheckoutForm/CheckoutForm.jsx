@@ -1,4 +1,3 @@
-import Button from "../Button/Button";
 import "./checkoutform.css";
 
 function CheckoutForm() {
@@ -8,7 +7,7 @@ function CheckoutForm() {
             <input placeholder="Nombre" />
             <input placeholder="Email" />
             <input placeholder="Teléfono" />
-            <Button color="#03c46c">Comprar</Button>
+            <button color="#03c46c">Comprar</button>
         </div>
     );
 }
