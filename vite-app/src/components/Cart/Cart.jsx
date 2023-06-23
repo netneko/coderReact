@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { createOrder } from "../../services/firebase/firebaseConfig";
+import Swal from "sweetalert2";
 
 const Cart = () => {
     const { cart, totalItems, countTotalPrice, clearCart, removeItem, subTotalItem } = useContext(CartContext);
+    const navigateTo = useNavigate();
 
     if (totalItems === 0) {
         return (
@@ -18,7 +21,7 @@ const Cart = () => {
         );
     }
 
-    function handleConfirm() {
+    async function handleConfirm() {
         /*
         1. Array con listado de items
         2. Datos del usuario (nombre,telefono,etc)
@@ -28,15 +31,28 @@ const Cart = () => {
         const order = {
             items: cart,
             buyer: {
-                name:"",
-                phone:"",
-                email:""
+                name: "",
+                phone: "",
+                email: ""
             },
             date: new Date(),
             price: countTotalPrice()
         };
 
-        createOrder(order)
+        try {
+            const id = await createOrderWithStockUpdate(order);
+            console.log("respuesta", id);
+            clear();
+
+            navigateTo(`/order-confirmation/${id}`);
+            /* 
+            1. alert: SweetAlert/toastify -> muestren el id
+            2. redirección: React Router -> /confirmation
+            3. rendering condicional -> modificando un state 0.46 min explica como
+          */
+        } catch (error) {
+            alert(error);
+        }
     }
 
 
@@ -73,7 +89,7 @@ const Cart = () => {
             <button onClick={handleConfirm}>Crear orden de compra</button>
         </div>
     );
-    
+
 
 
 };
