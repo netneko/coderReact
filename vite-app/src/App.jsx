@@ -9,11 +9,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, {useContext, createContext} from 'react';
 import { CartContextProvider } from './context/CartContext';
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
+import { exportData } from './services/firebase/helpers';
 
 
 function App() {
   return (
   <CartContextProvider>
+    <button onClick={exportData}>Exportar data, correr una sola vez y borrar de aca!</button>
     <BrowserRouter>
       <div className='App'>
         <NavBar /> 
@@ -22,7 +24,7 @@ function App() {
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:categoryid' element={<ItemListContainer />} />
           <Route path='/item/:productId' element={<ItemDetailContainer />} />
-          <Route path='/order-confirmation' element={<OrderConfirmation/>} />
+          <Route path='/order-confirmation/orderid' element={<OrderConfirmation/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<h1>404 Elemento no encontrado</h1>} />
           

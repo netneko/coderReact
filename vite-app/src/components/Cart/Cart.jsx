@@ -42,14 +42,8 @@ const Cart = () => {
         try {
             const id = await createOrderWithStockUpdate(order);
             console.log("respuesta", id);
-            clear();
-
+            clearCart();
             navigateTo(`/order-confirmation/${id}`);
-            /* 
-            1. alert: SweetAlert/toastify -> muestren el id
-            2. redirección: React Router -> /confirmation
-            3. rendering condicional -> modificando un state 0.46 min explica como
-          */
         } catch (error) {
             alert(error);
         }
