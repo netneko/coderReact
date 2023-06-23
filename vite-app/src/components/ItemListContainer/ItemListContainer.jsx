@@ -1,18 +1,21 @@
 import "./ItemListContainer.css";
 import { useEffect, useState } from "react";
-import {getDocs,collection,query,where} from  'firebase/firestore'
+import { getDocs, collection, query, where } from 'firebase/firestore'
 import { db } from "../../services/firebase/firebaseConfig";
-
-/* AsyncMock - servicioMock  */
-import productsDB from "../../data/products";
-import ItemList from "../ItemList/ItemList";
-
+import { getData } from "../../services/firebase/firebaseConfig";
 /*Navegacion*/
 import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
+
+
+/* AsyncMock - servicioMock  */
+//import productsDB from "../../data/products";
+
+
 
 
 /*Esto podria ponerlo dentro del archivo de products.js tambien pero como lo vimos en clase asi prfiero dejarlo aca
-ESTA FUNCION VOY A REEMPLAZARLA EN firebaseConfig*/
+ESTA FUNCION VOY A REEMPLAZARLA EN firebaseConfig
 function getData() {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -20,29 +23,25 @@ function getData() {
         }, 2000);
     });
 }
-
+*/
 /* ---------------------------------------------- */
 
 function ItemListContainer() {
+    let [isLoading, setIsLoading] = useState(true);
     let [products, setProducts] = useState([]);
     const { categoryid } = useParams();
 
+    const fetchData = categoryid === undefined ? getData : getCategoryData;
+
     useEffect(() => {
-        getData().then((respuesta) => {
-            if (categoryid) {
-                const filterProducts = respuesta.filter(
-                    (item) => item.category === categoryid
-                );
-                setProducts(filterProducts);
-            } else {
-                setProducts(respuesta);
-            }
-        });
+        fetchData(categoryid)
+            .then((respuesta) => setProducts(respuesta))
+            .finally(() => {
+                setIsLoading(false);
+            });
     }, [categoryid]);
 
-    return <ItemList products={products} />;
+    return <ItemList isLoading={isLoading} products={products} />;
 }
-
-
 
 export default ItemListContainer;

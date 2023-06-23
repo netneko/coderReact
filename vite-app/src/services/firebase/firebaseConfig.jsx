@@ -28,6 +28,9 @@ export async function getData() {
     return { ...doc.data(), id: doc.id };
   });
 
+/* ALTERNATIVA a lo de arriba para probar
+ const dataDocs = arrayDocs.map((doc) => doc.data());  */
+
   return dataDocs;
 }
 
