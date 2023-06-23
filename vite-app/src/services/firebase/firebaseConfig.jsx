@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs,getDoc,doc } from 'firebase/firestore';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -35,9 +35,10 @@ export async function getData() {
 }
 
 //reemplazo de funcion de ItemDetailContainer.jsx
-function getItemDataById()
-{
-
+export async function getItemDataById(idUrl) {
+  const docRef = doc(db, "products", idUrl);
+  const docSnap = await getDoc(docRef);
+  return { id: docSnap.id, ...docSnap.data() };
 }
 
 //Tambien falta la de filtrar por categoria
