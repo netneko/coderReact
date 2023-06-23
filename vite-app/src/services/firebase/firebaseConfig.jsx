@@ -1,5 +1,11 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs,getDoc,doc } from 'firebase/firestore';
+import { getFirestore,
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+  query,
+  where} from 'firebase/firestore';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -39,10 +45,26 @@ export async function getItemDataById(idUrl) {
   const docRef = doc(db, "products", idUrl);
   const docSnap = await getDoc(docRef);
   return { id: docSnap.id, ...docSnap.data() };
+
+  //validacion
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+  
 }
 
 //Tambien falta la de filtrar por categoria
-function getCategoryData ()
-{
+export async function getCategoryData(idCategory) {
+  const productsCollectionRef = collection(db, "products");
+  const q = query(productsCollectionRef, where("category", "==", idCategory));
+  const productsSnapshot = await getDocs(q);
+  const arrayDocs = productsSnapshot.docs;
+  const dataDocs = arrayDocs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
+  });
 
+  return dataDocs;
 }
