@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { createOrder } from "../../services/firebase/firebaseConfig";
-import CheckoutForm from '../CheckoutForm/CheckoutForm/';
+import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 
 
@@ -15,9 +15,6 @@ const Cart = () => {
     const [buyerName, setBuyerName] = useState("");
     const [buyerPhone, setBuyerPhone] = useState("");
     const [buyerEmail, setBuyerEmail] = useState("");
-
-
-  
     if (totalItems === 0) {
         return (
             <div>
@@ -98,7 +95,3 @@ export default Cart;
 
 
 //Me gustaria agregar los botones para agregar o restar unidades de un item
-/* {<CheckoutForm /> Descoemntar esto al terminar de hacer la funcionalidad} para agregar el componente del formulario con datos del cliente
-OJO!!! ahora estoy guardando la orden sin los datos del cliente SOlucoinar es desde el Heckout tambien
-VA DEBAJO DEL CIERRE DE LA TABLA
-*/
