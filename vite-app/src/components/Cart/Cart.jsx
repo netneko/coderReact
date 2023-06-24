@@ -1,15 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { createOrder } from "../../services/firebase/firebaseConfig";
-import Swal from "sweetalert2";
+import CheckoutForm from '../CheckoutForm/CheckoutForm/';
+
+
+
+
 
 const Cart = () => {
     const { cart, totalItems, countTotalPrice, clearCart, removeItem, subTotalItem } = useContext(CartContext);
     const navigateTo = useNavigate();
+    const [buyerName, setBuyerName] = useState("");
+    const [buyerPhone, setBuyerPhone] = useState("");
+    const [buyerEmail, setBuyerEmail] = useState("");
 
+
+  
     if (totalItems === 0) {
         return (
             <div>
@@ -22,25 +30,22 @@ const Cart = () => {
     }
 
     async function handleConfirm() {
-        /*
-        1. Array con listado de items
-        2. Datos del usuario (nombre,telefono,etc)
-        3. timestamp o fecha
-        4. Precio total de la compra (traer del Context)
-         */
         const order = {
             items: cart,
             buyer: {
-                name: "",
-                phone: "",
-                email: ""
+                name:buyerName,
+                phone: buyerPhone,
+                email: buyerEmail
             },
             date: new Date(),
             price: countTotalPrice()
         };
 
         try {
-            const id = await createOrderWithStockUpdate(order);
+            /* CON MANEJO DE STOCK
+            const id = await createOrderWithStockUpdate(order);*/
+            //Sin manejo de stock
+            const id = await createOrder(order)
             console.log("respuesta", id);
             clearCart();
             navigateTo(`/order-confirmation/${id}`);
@@ -80,6 +85,7 @@ const Cart = () => {
                 </tbody>
             </table>
             <button onClick={() => clearCart()}>Vaciar carrito</button>
+            <CheckoutForm handleConfirm={handleConfirm} />
             <button onClick={handleConfirm}>Crear orden de compra</button>
         </div>
     );
@@ -92,6 +98,7 @@ export default Cart;
 
 
 //Me gustaria agregar los botones para agregar o restar unidades de un item
-/* {<CheckoutForm /> Descoemntar esto al terminar de hacer la funcionalidad}
+/* {<CheckoutForm /> Descoemntar esto al terminar de hacer la funcionalidad} para agregar el componente del formulario con datos del cliente
+OJO!!! ahora estoy guardando la orden sin los datos del cliente SOlucoinar es desde el Heckout tambien
 VA DEBAJO DEL CIERRE DE LA TABLA
 */

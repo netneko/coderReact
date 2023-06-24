@@ -70,7 +70,6 @@ export async function getCategoryData(idCategory) {
 //Ver como pasar esta funcon a Checkout.jsx
 export async function createOrder(data) {
   const ordersCollectionRef = collection(db, "orders");
-
   const response = await addDoc(ordersCollectionRef, data);
   console.log("orden creada!")
   return response.id;
@@ -100,7 +99,7 @@ export async function createOrderWithStockUpdate(data) {
     } else {
       const docRef = doc(db, "products", itemInCart.id);
       batch.update(docRef, { stock: stockToUpdate });
-    }
+    }ß
   }
 
   await batch.commit();
