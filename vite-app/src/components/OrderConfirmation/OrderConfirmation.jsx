@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
 import { getDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
+
+//Pagina de Order confirmation o Thank you page.
+//Incluye un Link para volver a la pagina ppal
 
 function OrderConfirm() {
     const { orderid } = useParams();
@@ -7,7 +11,11 @@ function OrderConfirm() {
         <div>
             <h1>Muchas gracias por tu compra!</h1>
             <small>Este es tu comprobante de compra: {orderid}</small>
+            <Link to="/" className="Option">
+            Volver al listado de productos
+            </Link>
         </div>
+        
     );
 }
 

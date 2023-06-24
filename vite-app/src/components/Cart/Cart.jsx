@@ -15,6 +15,7 @@ const Cart = () => {
     const [buyerName, setBuyerName] = useState("");
     const [buyerPhone, setBuyerPhone] = useState("");
     const [buyerEmail, setBuyerEmail] = useState("");
+    //Esto es innecesario en realidad porque nunca voy a mostrar el icono del carrito vacio y por lo tanto no puedo acceder al mismo si esta vacio
     if (totalItems === 0) {
         return (
             <div>
@@ -27,6 +28,7 @@ const Cart = () => {
     }
 
     async function handleConfirm(buyerName, buyerPhone, buyerEmail) {
+       // console.log(buyerName); 
         const order = {
             items: cart,
             buyer: {
@@ -40,11 +42,10 @@ const Cart = () => {
 
         try {
             const id = await createOrder(order);
-            console.log("respuesta", id);
             clearCart();
             navigateTo(`/order-confirmation/${id}`);
         } catch (error) {
-            alert(error);
+            alert(error); 
         }
     }
 
@@ -89,7 +90,6 @@ const Cart = () => {
                 setBuyerEmail={setBuyerEmail}
                 handleConfirm={handleConfirm}
             />
-
             <button onClick={handleConfirm}>Crear orden de compra</button>
         </div>
     );
