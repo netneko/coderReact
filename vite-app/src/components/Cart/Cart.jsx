@@ -82,15 +82,11 @@ const Cart = () => {
             </table>
             <button onClick={() => clearCart()}>Vaciar carrito</button>
             <CheckoutForm
-                buyerName={buyerName}
-                buyerPhone={buyerPhone}
-                buyerEmail={buyerEmail}
                 setBuyerName={setBuyerName}
                 setBuyerPhone={setBuyerPhone}
                 setBuyerEmail={setBuyerEmail}
-                handleConfirm={handleConfirm}
             />
-            <button onClick={handleConfirm}>Crear orden de compra</button>
+            <button onClick={() => handleConfirm(buyerName, buyerPhone, buyerEmail)}>Crear orden de compra</button>
         </div>
     );
 
