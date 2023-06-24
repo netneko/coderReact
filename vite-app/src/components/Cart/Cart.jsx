@@ -26,11 +26,11 @@ const Cart = () => {
         );
     }
 
-    async function handleConfirm() {
+    async function handleConfirm(buyerName, buyerPhone, buyerEmail) {
         const order = {
             items: cart,
             buyer: {
-                name:buyerName,
+                name: buyerName,
                 phone: buyerPhone,
                 email: buyerEmail
             },
@@ -39,10 +39,7 @@ const Cart = () => {
         };
 
         try {
-            /* CON MANEJO DE STOCK
-            const id = await createOrderWithStockUpdate(order);*/
-            //Sin manejo de stock
-            const id = await createOrder(order)
+            const id = await createOrder(order);
             console.log("respuesta", id);
             clearCart();
             navigateTo(`/order-confirmation/${id}`);
@@ -50,6 +47,7 @@ const Cart = () => {
             alert(error);
         }
     }
+
 
 
     return (
@@ -82,7 +80,16 @@ const Cart = () => {
                 </tbody>
             </table>
             <button onClick={() => clearCart()}>Vaciar carrito</button>
-            <CheckoutForm handleConfirm={handleConfirm} />
+            <CheckoutForm
+                buyerName={buyerName}
+                buyerPhone={buyerPhone}
+                buyerEmail={buyerEmail}
+                setBuyerName={setBuyerName}
+                setBuyerPhone={setBuyerPhone}
+                setBuyerEmail={setBuyerEmail}
+                handleConfirm={handleConfirm}
+            />
+
             <button onClick={handleConfirm}>Crear orden de compra</button>
         </div>
     );

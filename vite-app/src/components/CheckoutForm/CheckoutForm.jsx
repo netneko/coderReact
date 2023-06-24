@@ -3,7 +3,6 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../services/firebase/firebaseConfig";
 import "./CheckoutForm.css";
 
-
 function CheckoutForm({ handleConfirm }) {
     const [buyerName, setBuyerName] = useState("");
     const [buyerPhone, setBuyerPhone] = useState("");
@@ -32,7 +31,7 @@ function CheckoutForm({ handleConfirm }) {
                 value={buyerPhone}
                 onChange={(e) => setBuyerPhone(e.target.value)}
             />
-            <button onClick={handleSubmit} style={{ backgroundColor: "#03c46c" }}>
+            <button onClick={handleSubmit} style={{ backgroundColor: "#869d79e3" }}>
                 Comprar
             </button>
         </div>
