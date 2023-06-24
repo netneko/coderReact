@@ -6,7 +6,8 @@ import { getFirestore,
   doc,
   query,
   addDoc,
-  where} from 'firebase/firestore';
+  where,
+  orderBy} from 'firebase/firestore';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,16 +29,14 @@ console.log(db);
 //remplazo de funcion de ItemListContainer.jsx
 export async function getData() {
   const productsCollectionRef = collection(db, "products");
-  const productsSnapshot = await getDocs(productsCollectionRef);
+  //Con esto voy a ordenar los productos por index
+  const q = query(productsCollectionRef,orderBy("index"));
+  const productsSnapshot = await getDocs(q);
   const arrayDocs = productsSnapshot.docs;
 
   const dataDocs = arrayDocs.map((doc) => {
     return { ...doc.data(), id: doc.id };
   });
-
-/* ALTERNATIVA a lo de arriba para probar
- const dataDocs = arrayDocs.map((doc) => doc.data());  */
-
   return dataDocs;
 }
 
@@ -46,12 +45,9 @@ export async function getItemDataById(idUrl) {
   const docRef = doc(db, "products", idUrl);
   const docSnap = await getDoc(docRef);
   return { id: docSnap.id, ...docSnap.data() };
-
-  //validacion
   if (docSnap.exists()) {
     console.log("Document data:", docSnap.data());
   } else {
-    // docSnap.data() will be undefined in this case
     console.log("No such document!");
   }
   
