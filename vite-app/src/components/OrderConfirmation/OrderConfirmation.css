@@ -1,0 +1,31 @@
+.thanku-message {
+    text-align: center;
+    color: #6c6b6b;
+    margin-top: 4rem;
+}
+
+
+.orderId-message {
+    text-align: center;
+    color: #6c6b6b;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 4rem;
+    border: 1px solid;
+    padding: 0.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button-back2home {
+    margin: 4rem auto 5rem auto;
+    display: block;
+    background-color:#8a9e31c3;
+    border-color: #8a9e31c3;
+    border-radius: 5%;
+    color: #fafafa;
+    font-weight: 800;
+    padding:0.5rem;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(165, 164, 164, 0.3);
+}

@@ -2,7 +2,9 @@ import { getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { db } from "../../services/firebase/firebaseConfig";
 
 
-
+//Hice esta funcion para borrar todos los campos de la tabla Orders para limpiarla una vez y qu eno haya tantas pruebas
+//La tengo que llamar desde app con un boton y despues borrarlo desde ahi
+//
 
 export async function deleteAllOrders() {
 try {

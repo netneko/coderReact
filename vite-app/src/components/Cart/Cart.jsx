@@ -3,7 +3,10 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { createOrder } from "../../services/firebase/firebaseConfig";
-import CheckoutForm from '../CheckoutForm/CheckoutForm';
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import "./Cart.css";
+
+
 
 const Cart = () => {
     const { cart, totalItems, countTotalPrice, clearCart, removeItem } = useContext(CartContext);
@@ -37,6 +40,7 @@ const Cart = () => {
         return true;
     };
 
+
     async function handleConfirm() {
         if (!validateFields()) {
             return;
@@ -64,7 +68,7 @@ const Cart = () => {
 
     return (
         <div>
-            <h2>Tu carrito de compras</h2>
+            <h2 className="page-title">Tu carrito de compras</h2>
             {totalItems === 0 ? (
                 <div>
                     <h1>No hay items en el carrito!</h1>
@@ -74,13 +78,13 @@ const Cart = () => {
                 </div>
             ) : (
                 <div>
-                    <table>
+                    <table className="cart-table">
                         <thead>
                             <tr>
                                 <th>Título</th>
                                 <th>Cantidad</th>
-                                <th>Subtotal</th>
-                                <th>Remover</th>
+                                <th>Total</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,27 +92,24 @@ const Cart = () => {
                                 <tr key={item.id}>
                                     <td>{item.title}</td>
                                     <td>{item.quantity}</td>
-                                    <td>Subtotal: {item.quantity * item.price}</td>
+                                    <td>{item.quantity * item.price}</td>
                                     <td>
-                                        <button onClick={() => removeItem(item.id)}>X</button>
+                                        <button className="button-removeItem" onClick={() => removeItem(item.id)}>X</button>
                                     </td>
                                 </tr>
                             ))}
-                            <tr>
+                            <tr className="cart-total-row">
                                 <td colSpan="2">Total del carrito:</td>
                                 <td colSpan="2">{countTotalPrice()}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <button onClick={clearCart}>Vaciar carrito</button>
-                    <CheckoutForm
-                        setBuyerName={setBuyerName}
-                        setBuyerPhone={setBuyerPhone}
-                        setBuyerEmail={setBuyerEmail}
-                        error={error}
-                    />
-                    {error && <p>{error}</p>}
-                    <button onClick={handleConfirm}>Crear orden de compra</button>
+                    <button className="cart-clear-button" onClick={clearCart}>
+                        Vaciar carrito
+                    </button>
+                    <CheckoutForm setBuyerName={setBuyerName} setBuyerPhone={setBuyerPhone} setBuyerEmail={setBuyerEmail} error={error} />
+                    {error && <p className="error-message">{error}</p>}
+                    <button className="button-confirm" onClick={handleConfirm}>Crear orden de compra</button>
                 </div>
             )}
         </div>

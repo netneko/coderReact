@@ -4,7 +4,7 @@ import "./CheckoutForm.css";
 function CheckoutForm({ setBuyerName, setBuyerPhone, setBuyerEmail }) {
     return (
         <div className="checkoutform-container">
-            <small>Completa tu compra</small>
+            <small className="form-title">Completa tu compra</small>
             <input
                 placeholder="Nombre"
                 onChange={(e) => setBuyerName(e.target.value)}

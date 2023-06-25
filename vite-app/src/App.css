@@ -1,3 +1,11 @@
 #root {
   font-family: 'Roboto', sans-serif;
 }
+
+.message-404
+{
+  text-align: center;
+  color: #6c6b6b;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
