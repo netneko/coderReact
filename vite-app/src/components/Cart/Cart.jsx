@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { createOrder } from "../../services/firebase/firebaseConfig";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import HomePageButton from "../HomePageButton/HomePageButton";
 import "./Cart.css";
 
 const Cart = () => {
@@ -70,7 +71,7 @@ const Cart = () => {
                 <div>
                     <h1 className="emptycart-message">No hay items en el carrito!</h1>
                     <Link to="/" className="Option-emptycart">
-                        Volver al listado de productos
+                        <HomePageButton/>
                     </Link>
                 </div>
             ) : (
