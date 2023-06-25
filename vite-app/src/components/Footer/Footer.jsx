@@ -9,7 +9,7 @@ const Footer = () => {
                 <h3 className="footer-direccion">
                     Av Siempre Viva 742
                 </h3>
-                <div className="footer-madeBy"> Made with &#9829; and (a little of panic)  by Zuki</div>
+                <div className="footer-madeBy"> Made with &#9829; by Ceci Zuki</div>
                 <div className="socialmedia-links">
                     <a href="https://www.facebook.com/tu_perfil_de_facebook" target="_blank" rel="noopener noreferrer">
                         <FaFacebook />

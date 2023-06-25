@@ -27,9 +27,12 @@ La estructura de archivos y carpetas principales del proyecto es la siguiente:
 ├── src/                 # Código fuente
 │   ├── components/      # Componentes reutilizables
 │   ├── context          # Context del proyecto
+|   |__ Data             # products.js. Array de productos. No lo borro porque lo necesito en caso de querer cargar collection a Firebase con helpers
 │   ├── App.jsx          # Componente principal de la aplicación
 |   |── App.css          # Estilos del componente principal de la aplicación
 │   └── index.js         # Punto de entrada
-|   └── services         # firebaseConfig ,helpers (llenar collection de Firestore) y deleteOrders (vaciar collection de Firestore)
+|   └── services         # firebaseConfig ,helpers (llenar collection de Firestore * ) y deleteOrders (vaciar collection de Firestore)
 ├── package.json         # Archivo de configuración de dependencias y scripts
 └── README.md            # Este archivo
+
+
