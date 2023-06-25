@@ -1,6 +1,7 @@
 .page-title {
     text-align: center;
     color: #484747;
+    font-size: 2rem;
 }
 
 .cart-table {
@@ -84,6 +85,8 @@
     margin-top: 2rem;
 }
 
-.Option-emptycart {
+.emptycart-message{
     text-align: center;
+    color: #484747;
+    font-size: 1.5rem;
 }

@@ -5,10 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { createOrder } from "../../services/firebase/firebaseConfig";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import "./Cart.css";
-import HomePageButon from "../HomePageButton/HomePageButton";
-//import HomePageButon from "../HomePageButton/HomePageButton";
-
-
 
 const Cart = () => {
     const { cart, totalItems, countTotalPrice, clearCart, removeItem } = useContext(CartContext);
@@ -47,7 +43,6 @@ const Cart = () => {
         if (!validateFields()) {
             return;
         }
-
         const order = {
             items: cart,
             buyer: {
@@ -73,7 +68,7 @@ const Cart = () => {
             <h2 className="page-title">Tu carrito de compras</h2>
             {totalItems === 0 ? (
                 <div>
-                    <h1>No hay items en el carrito!</h1>
+                    <h1 className="emptycart-message">No hay items en el carrito!</h1>
                     <Link to="/" className="Option-emptycart">
                         Volver al listado de productos
                     </Link>
@@ -85,8 +80,8 @@ const Cart = () => {
                             <tr>
                                 <th>Título</th>
                                 <th>Cantidad</th>
-                                <th>Total</th>
-                                <th>Acción</th>
+                                <th>Subtotal</th>
+                                <th>Remover</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,7 +91,9 @@ const Cart = () => {
                                     <td>{item.quantity}</td>
                                     <td>{item.quantity * item.price}</td>
                                     <td>
-                                        <button className="button-removeItem" onClick={() => removeItem(item.id)}>X</button>
+                                        <button className="button-removeItem" onClick={() => removeItem(item.id)}>
+                                            X
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
@@ -111,7 +108,12 @@ const Cart = () => {
                     </button>
                     <CheckoutForm setBuyerName={setBuyerName} setBuyerPhone={setBuyerPhone} setBuyerEmail={setBuyerEmail} error={error} />
                     {error && <p className="error-message">{error}</p>}
-                    <button className="button-confirm" onClick={handleConfirm}>Crear orden de compra</button>
+                    {buyerName !== "" && buyerPhone !== "" && buyerEmail !== "" && (
+                        <button className="button-confirm" onClick={handleConfirm}>
+                            Crear orden de compra
+                        </button>
+                    )}
+
                 </div>
             )}
         </div>

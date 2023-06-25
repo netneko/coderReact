@@ -79,7 +79,9 @@ export async function createOrder(data) {
 /*Esta funcion es para realizar la compra y que 
 a) reste del stock
 b) muestre un mensaje de error si no hay stock. En mi caso eso no deberia pasar porque
-yo inhabilito el boton de agregar al carrito si no hay stock, como corresponde en la vida real */
+yo inhabilito el boton de agregar al carrito si no hay stock,
+pero deberia estar la funcionalidad por si un producto se acaba mientras lo tengo en mi carrito
+ */
 
 export async function createOrderWithStockUpdate(data) {
   const ordersCollectionRef = collection(db, "orders");

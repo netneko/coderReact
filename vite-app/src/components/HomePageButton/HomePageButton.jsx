@@ -1,10 +1,10 @@
 import React from "react";
-import './HomePageButon';
+import './HomePageButton';
 
-const HomePageButon = () => {
+const HomePageButton = () => {
     return (
         <button className="button-back2home"> Volver al listado de productos</button>
     )
 }
 
-export default HomePageButon;
+export default HomePageButton;
