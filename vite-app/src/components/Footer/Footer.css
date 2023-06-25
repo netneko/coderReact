@@ -1,8 +1,38 @@
-.div-footer {
+.footer 
+{
+    color: white;
     background-color: #869d79e3;
 }
 
-.footer {
-    color: white;
-    padding: 20px;
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+.footer-direccion
+{
+    margin-left:6rem;
+}
+
+.footer-madeBy
+{
+    margin: auto ;
+}
+
+.socialmedia-links {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+/* Espacio entre los íconos */
+.socialmedia-links a {
+    margin-left: 10px; 
+}
+
+.socialmedia-links svg {
+    width: 24px;
+    height: 24px;
+}
+  

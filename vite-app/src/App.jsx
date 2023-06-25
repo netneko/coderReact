@@ -14,13 +14,8 @@ import { exportData } from './services/firebase/helpers';
 
 
 function App() {
-    const handleDeleteOrders = async () => {
-      await deleteAllOrders();
-    };
-  
   return (
   <CartContextProvider>
-<button onClick={handleDeleteOrders}>Eliminar órdenes de compra</button>
     <BrowserRouter>
       <div className='App'>
         <NavBar /> 
@@ -31,7 +26,7 @@ function App() {
           <Route path='/item/:productId' element={<ItemDetailContainer />} />
           <Route path='/order-confirmation/:orderid' element={<OrderConfirmation/>} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='*' element={<h1 className='message-404'>404 Oops!parece que esa página no existe</h1>} />
+          <Route path='*' element={<h1 className='message-404'>404 Oops! Parece que esa página no existe</h1>} />
         </Routes>
         <Footer/>
       </div>
