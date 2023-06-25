@@ -25,7 +25,7 @@ function App() {
           <Route path='/category/:categoryid' element={<ItemListContainer />} />
           <Route path='/item/:productId' element={<ItemDetailContainer />} />
           <Route path='/order-confirmation/:orderid' element={<OrderConfirmation/>} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/cart' element={<Cart/>} />
           <Route path='*' element={<h1 className='message-404'>404 Oops! Parece que esa página no existe</h1>} />
         </Routes>
         <Footer/>

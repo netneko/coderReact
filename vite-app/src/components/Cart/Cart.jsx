@@ -72,7 +72,7 @@ const Cart = () => {
             {totalItems === 0 ? (
                 <div>
                     <h1>No hay items en el carrito!</h1>
-                    <Link to="/" className="Option">
+                    <Link to="/" className="Option-emptycart">
                         Volver al listado de productos
                     </Link>
                 </div>
