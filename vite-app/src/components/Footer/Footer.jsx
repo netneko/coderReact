@@ -7,10 +7,11 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-container">
                 <h3 className="footer-direccion">
-                    Av Siempre Viva 742
+                    Av Siempre Viva 742 - CP 1425 - Tel: +56 9115329-7666
                 </h3>
                 <div className="footer-madeBy"> Made with &#9829; by Ceci Zuki</div>
                 <div className="socialmedia-links">
+                    <small className="rs-title">Encontranos en nuestras redes sociales</small>
                     <a href="https://www.facebook.com/tu_perfil_de_facebook" target="_blank" rel="noopener noreferrer">
                         <FaFacebook />
                     </a>

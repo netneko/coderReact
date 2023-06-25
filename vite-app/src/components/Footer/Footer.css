@@ -13,6 +13,7 @@
 .footer-direccion
 {
     margin-left:6rem;
+    font-size: 1.1rem;
 }
 
 .footer-madeBy
@@ -20,6 +21,12 @@
     margin: auto ;
 }
 
+.rs-title
+{
+    color: #fafafa;
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+}
 .socialmedia-links {
     display: flex;
     align-items: center;
@@ -28,7 +35,7 @@
 
 /* Espacio entre los íconos */
 .socialmedia-links a {
-    margin-left: 10px; 
+    margin-left: 1rem; 
 }
 
 .socialmedia-links svg {
