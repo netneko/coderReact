@@ -82,7 +82,7 @@ const Cart = () => {
                                 <th>Título</th>
                                 <th>Cantidad</th>
                                 <th>Subtotal</th>
-                                <th>Remover</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -98,7 +98,7 @@ const Cart = () => {
                                     </td>
                                 </tr>
                             ))}
-                            <tr className="cart-total-row">
+                            <tr className="cart-total-row" >
                                 <td colSpan="2">Total del carrito:</td>
                                 <td colSpan="2">{countTotalPrice()}</td>
                             </tr>

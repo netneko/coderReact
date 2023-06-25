@@ -26,8 +26,9 @@
 
 }
 
-.cart-total-row {
+.cart-total-row td {
     font-weight: bold;
+    border-top: 1px solid #c5c5c5; /* Agrega una línea superior de 1 píxel de grosor y color negro */
 }
 
 .button-removeItem {
@@ -90,3 +91,4 @@
     color: #484747;
     font-size: 1.5rem;
 }
+
