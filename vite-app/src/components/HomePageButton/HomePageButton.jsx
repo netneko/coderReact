@@ -1,10 +1,13 @@
 import React from "react";
 import './HomePageButton';
+import { Link } from "react-router-dom";
 
 const HomePageButton = () => {
     return (
-        <button className="button-back2home"> Volver al listado de productos</button>
-    )
+        <Link to="/" className="Option-emptycart">
+            <button className="button-back2home"> Volver al listado de productos</button>
+        </Link>
+)
 }
 
 export default HomePageButton;

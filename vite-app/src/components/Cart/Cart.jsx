@@ -70,9 +70,7 @@ const Cart = () => {
             {totalItems === 0 ? (
                 <div>
                     <h1 className="emptycart-message">No hay items en el carrito!</h1>
-                    <Link to="/" className="Option-emptycart">
-                        <HomePageButton/>
-                    </Link>
+                        <HomePageButton/>    
                 </div>
             ) : (
                 <div>
@@ -104,9 +102,12 @@ const Cart = () => {
                             </tr>
                         </tbody>
                     </table>
-                    <button className="cart-clear-button" onClick={clearCart}>
+                    <div className="cart-buttons">
+                        <button className="cart-clear-button" onClick={clearCart}>
                         Vaciar carrito
                     </button>
+                    <HomePageButton/>
+                    </div>
                     <CheckoutForm setBuyerName={setBuyerName} setBuyerPhone={setBuyerPhone} setBuyerEmail={setBuyerEmail} error={error} />
                     {error && <p className="error-message">{error}</p>}
                     {buyerName !== "" && buyerPhone !== "" && buyerEmail !== "" && (
