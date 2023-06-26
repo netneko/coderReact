@@ -99,7 +99,7 @@ export async function createOrderWithStockUpdate(data) {
     const stockToUpdate = stock - parseInt(itemInCart.quantity);
 
     if (stockToUpdate < 0) {
-      throw new Error(`No hay stock suficiente del producto: ${itemInCart.id}`);
+      throw new Error(`No hay stock suficiente del producto: ${itemInCart.title}`);
     } else {
       const docRef = doc(db, "products", itemInCart.id);
       batch.update(docRef, { stock: stockToUpdate });

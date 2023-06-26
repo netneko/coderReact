@@ -32,8 +32,8 @@ Aclaraciones:
 Estructura del Proyecto
 La estructura de archivos y carpetas principales del proyecto es la siguiente:
 
-├── public/              # Archivos estáticos
-├── src/                 # Código fuente
+├── public/              # Imagenes
+├── src/                 
 │   ├── components/      # Componentes reutilizables
 │   ├── context          # Context del proyecto
 |   |__ Data             # products.js. Array de productos. No lo borro porque lo necesito en caso de querer cargar collection a Firebase con helpers
