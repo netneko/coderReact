@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { createOrder } from "../../services/firebase/firebaseConfig";
+import { createOrderWithStockUpdate } from "../../services/firebase/firebaseConfig";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import HomePageButton from "../HomePageButton/HomePageButton";
 import "./Cart.css";
@@ -56,14 +56,14 @@ const Cart = () => {
         };
 
         try {
-            const id = await createOrder(order);
+            const id = await createOrderWithStockUpdate(order);
             clearCart();
             navigateTo(`/order-confirmation/${id}`);
         } catch (error) {
             alert(error);
         }
     }
-
+    console.log(cart)
     return (
         <div>
             <h2 className="page-title">Tu carrito de compras</h2>

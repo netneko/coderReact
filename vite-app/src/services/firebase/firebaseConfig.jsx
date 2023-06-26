@@ -1,14 +1,16 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore,
+import {
+  getFirestore,
   collection,
   getDocs,
-  getDoc,
   doc,
+  getDoc,
   query,
-  addDoc,
   where,
-  orderBy} from 'firebase/firestore';
-
+  addDoc,
+  orderBy,
+  writeBatch,
+} from "firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -67,20 +69,19 @@ export async function getCategoryData(idCategory) {
 }
 
 
-//Ver como pasar esta funcon a Checkout.jsx
+/*
 export async function createOrder(data) {
   const ordersCollectionRef = collection(db, "orders");
   const response = await addDoc(ordersCollectionRef, data);
   console.log("orden creada!")
   return response.id;
 }
+*/
 
 
 /*Esta funcion es para realizar la compra y que 
 a) reste del stock
-b) muestre un mensaje de error si no hay stock. En mi caso eso no deberia pasar porque
-yo inhabilito el boton de agregar al carrito si no hay stock,
-pero deberia estar la funcionalidad por si un producto se acaba mientras lo tengo en mi carrito
+b) muestre un mensaje de error si no hay stock. 
  */
 
 export async function createOrderWithStockUpdate(data) {
@@ -93,15 +94,16 @@ export async function createOrderWithStockUpdate(data) {
     const docSnap = await getDoc(refDoc);
 
     const { stock } = docSnap.data();
-    console.log(stock);
 
-    const stockToUpdate = stock - itemInCart.count;
+
+    const stockToUpdate = stock - parseInt(itemInCart.quantity);
+
     if (stockToUpdate < 0) {
       throw new Error(`No hay stock suficiente del producto: ${itemInCart.id}`);
     } else {
       const docRef = doc(db, "products", itemInCart.id);
       batch.update(docRef, { stock: stockToUpdate });
-    }ß
+    }
   }
 
   await batch.commit();
