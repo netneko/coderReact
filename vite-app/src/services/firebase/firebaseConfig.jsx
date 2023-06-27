@@ -11,9 +11,9 @@ import {
   orderBy,
   writeBatch,
 } from "firebase/firestore";
-// https://firebase.google.com/docs/web/setup#available-libraries
+import Swal from 'sweetalert2';
 
-// Your web app's Firebase configuration
+// Configuracion Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDFPD3H7xcfar4gYpyMKDne-GDatgRBQ2I",
   authDomain: "proyectoreactcz.firebaseapp.com",
@@ -99,8 +99,13 @@ export async function createOrderWithStockUpdate(data) {
     const stockToUpdate = stock - parseInt(itemInCart.quantity);
 
     if (stockToUpdate < 0) {
-      throw new Error(`No hay stock suficiente del producto: ${itemInCart.title}`);
-    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: `No hay stock suficiente del producto: ${itemInCart.title}`,
+      });
+    } 
+    else {
       const docRef = doc(db, "products", itemInCart.id);
       batch.update(docRef, { stock: stockToUpdate });
     }
