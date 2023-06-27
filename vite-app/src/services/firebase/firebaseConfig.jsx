@@ -88,13 +88,13 @@ export async function createOrderWithStockUpdate(data) {
   const ordersCollectionRef = collection(db, "orders");
   const batch = writeBatch(db);
   const { items } = data;
+  let hasStock = true;
 
   for (let itemInCart of items) {
     const refDoc = doc(db, "products", itemInCart.id);
     const docSnap = await getDoc(refDoc);
 
     const { stock } = docSnap.data();
-
 
     const stockToUpdate = stock - parseInt(itemInCart.quantity);
 
@@ -104,15 +104,24 @@ export async function createOrderWithStockUpdate(data) {
         title: 'Error',
         text: `No hay stock suficiente del producto: ${itemInCart.title}`,
       });
-    } 
-    else {
+      hasStock = false;
+      break;
+    } else {
       const docRef = doc(db, "products", itemInCart.id);
       batch.update(docRef, { stock: stockToUpdate });
     }
   }
 
-  await batch.commit();
-  const response = await addDoc(ordersCollectionRef, data);
-
-  return response.id;
+  if (hasStock) {
+    await batch.commit();
+    const response = await addDoc(ordersCollectionRef, data);
+    return response.id;
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudo generar la orden de compra debido a la falta de stock.',
+    });
+    return Promise.reject(new Error('No hay suficiente stock'));
+  }
 }
